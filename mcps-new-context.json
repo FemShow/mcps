@@ -1,0 +1,91 @@
+{
+    "$schema": "https://purl.org/csv-cubed/qube-config/v1",
+    "title": "Marital and civil partnership status by category",
+    "description": "Marital and civil partnership status by category",
+    "creator": "https://www.gov.uk/government/organisations/office-for-national-statistics",
+    "publisher": "https://www.gov.uk/government/organisations/office-for-national-statistics",
+    "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "keywords": [
+        "married", 
+        "partnership",
+        "separated",
+        "divorced",
+        "widowed"
+    ],
+    "columns": {
+        "Lower Tier Local Authorities Code": {
+            "from_template": "statistical-geography"
+            },
+        "Lower Tier Local Authorities":{
+            "from_template": "statistical-geography"
+            },
+        "Marital and civil partnership status (12 categories) Code": false,
+        "Marital and civil partnership status (12 categories)":{
+        "type": "measures",
+        "values":
+    [
+        {
+            "label": "Does not apply",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/does-not-apply"
+        },
+        {
+            "label": "Never married and never registered a civil partnership",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/never-married"
+        },
+        {
+            "label": "Married: Opposite sex",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/married-opposite-sex"
+        },
+        {
+            "label": "Married: Same sex",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/married-same-sex"
+        },
+        {
+            "label": "In a registered civil partnership: Opposite sex",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/civil-partnership-opposite-sex"
+        },
+        {
+            "label": "In a registered civil partnership: Same sex",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/civil-partnership-same-sex"
+        },
+        {
+            "label": "Separated, but still married",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/separated-married"
+        },
+        {
+            "label": "Separated, but still in a registered civil partnership",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/separated-civil-partnership"
+        },
+        {
+            "label": "Divorced",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/divorced"
+        },
+        {
+            "label": "Formerly in a civil partnership now legally dissolved",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/legally-dissolved"
+        },
+        {
+            "label": "Widowed",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/widowed"
+        },
+        {
+            "label": "Surviving partner from civil partnership",
+            "definition_uri": "http://statistics.data.gov.uk/concepts/surviving-partner"
+        }
+    ]
+},
+"Observation":
+{
+ "type": "observations",
+ "data_type": "integer",
+ "unit": {
+    "from_existing": "http://qudt.org/vocab/unit/NUM",
+    "label": "Number",
+    "description": "Number of occurences of Marital and civil partnership status by category (Integer)."
+}
+}
+    }
+}
+
+
+
