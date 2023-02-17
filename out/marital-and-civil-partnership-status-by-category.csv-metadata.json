@@ -1,0 +1,1006 @@
+{
+    "@context": "http://www.w3.org/ns/csvw",
+    "@id": "marital-and-civil-partnership-status-by-category.csv#dataset",
+    "tables": [
+        {
+            "url": "marital-and-civil-partnership-status-by-category.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "titles": "Lower Tier Local Authorities Code",
+                        "name": "lower_tier_local_authorities_code",
+                        "propertyUrl": "marital-and-civil-partnership-status-by-category.csv#dimension/statistical-geography",
+                        "valueUrl": "http://statistics.data.gov.uk/id/statistical-geography/{+lower_tier_local_authorities_code}",
+                        "required": true
+                    },
+                    {
+                        "titles": "Lower Tier Local Authorities",
+                        "name": "lower_tier_local_authorities",
+                        "propertyUrl": "marital-and-civil-partnership-status-by-category.csv#dimension/statistical-geography",
+                        "valueUrl": "http://statistics.data.gov.uk/id/statistical-geography/{+lower_tier_local_authorities}",
+                        "required": true
+                    },
+                    {
+                        "titles": "Marital and civil partnership status (12 categories) Code",
+                        "name": "marital_and_civil_partnership_status_12_categories_code",
+                        "suppressOutput": true
+                    },
+                    {
+                        "titles": "Marital and civil partnership status (12 categories)",
+                        "name": "marital_and_civil_partnership_status_12_categories",
+                        "propertyUrl": "http://purl.org/linked-data/cube#measureType",
+                        "valueUrl": "marital-and-civil-partnership-status-by-category.csv#measure/{+marital_and_civil_partnership_status_12_categories}",
+                        "required": true
+                    },
+                    {
+                        "titles": "Observation",
+                        "name": "observation",
+                        "propertyUrl": "marital-and-civil-partnership-status-by-category.csv#measure/{+marital_and_civil_partnership_status_12_categories}",
+                        "datatype": "integer",
+                        "required": true
+                    },
+                    {
+                        "name": "virt_type",
+                        "virtual": true,
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://purl.org/linked-data/cube#Observation"
+                    },
+                    {
+                        "name": "virt_dataset",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/linked-data/cube#dataSet",
+                        "valueUrl": "marital-and-civil-partnership-status-by-category.csv#dataset"
+                    },
+                    {
+                        "name": "virt_unit",
+                        "virtual": true,
+                        "propertyUrl": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+                        "valueUrl": "marital-and-civil-partnership-status-by-category.csv#unit/number"
+                    }
+                ],
+                "foreignKeys": [],
+                "primaryKey": [
+                    "lower_tier_local_authorities_code",
+                    "lower_tier_local_authorities",
+                    "marital_and_civil_partnership_status_12_categories_"
+                ],
+                "aboutUrl": "marital-and-civil-partnership-status-by-category.csv#obs/{lower_tier_local_authorities_code},{lower_tier_local_authorities}@{marital_and_civil_partnership_status_12_categories}"
+            }
+        }
+    ],
+    "rdfs:seeAlso": [
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/measure-type",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 15
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/divorced",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/divorced"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/divorced"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 11
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-in-a-registered-civil-partnership",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/separated-civil-partnership"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Separated, but still in a registered civil partnership"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/married-same-sex",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-same-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-same-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 6
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/divorced",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/divorced"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Divorced"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#dataset",
+            "@type": [
+                "http://purl.org/linked-data/cube#Attachable",
+                "http://www.w3.org/ns/dcat#Resource",
+                "http://www.w3.org/ns/dcat#Dataset",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#DataSet"
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "@id": "https://www.gov.uk/government/organisations/office-for-national-statistics"
+                }
+            ],
+            "http://purl.org/dc/terms/description": [
+                {
+                    "@type": "https://www.w3.org/ns/iana/media-types/text/markdown#Resource",
+                    "@value": "Marital and civil partnership status by category"
+                }
+            ],
+            "http://purl.org/dc/terms/identifier": [
+                {
+                    "@value": "Marital and civil partnership status by category"
+                }
+            ],
+            "http://purl.org/dc/terms/issued": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+                    "@value": "2023-02-17T23:20:07.730572"
+                }
+            ],
+            "http://purl.org/dc/terms/license": [
+                {
+                    "@id": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                }
+            ],
+            "http://purl.org/dc/terms/modified": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+                    "@value": "2023-02-17T23:20:07.730572"
+                }
+            ],
+            "http://purl.org/dc/terms/publisher": [
+                {
+                    "@id": "https://www.gov.uk/government/organisations/office-for-national-statistics"
+                }
+            ],
+            "http://purl.org/dc/terms/title": [
+                {
+                    "@language": "en",
+                    "@value": "Marital and civil partnership status by category"
+                }
+            ],
+            "http://purl.org/linked-data/cube#structure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#structure"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Marital and civil partnership status by category"
+                }
+            ],
+            "http://www.w3.org/ns/dcat#keyword": [
+                {
+                    "@language": "en",
+                    "@value": "partnership"
+                },
+                {
+                    "@language": "en",
+                    "@value": "married"
+                },
+                {
+                    "@language": "en",
+                    "@value": "divorced"
+                },
+                {
+                    "@language": "en",
+                    "@value": "separated"
+                },
+                {
+                    "@language": "en",
+                    "@value": "widowed"
+                }
+            ],
+            "http://www.w3.org/ns/prov#wasGeneratedBy": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#csvcubed-build-activity"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/separated-but-still-in-a-registered-civil-partnership",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-in-a-registered-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-in-a-registered-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 10
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/married-opposite-sex",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-opposite-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-opposite-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 5
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/formerly-in-a-civil-partnership-now-legally-dissolved",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/formerly-in-a-civil-partnership-now-legally-dissolved"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/formerly-in-a-civil-partnership-now-legally-dissolved"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 12
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/never-married-and-never-registered-a-civil-partnership",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/never-married"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Never married and never registered a civil partnership"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-opposite-sex",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/civil-partnership-opposite-sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "In a registered civil partnership: Opposite sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/surviving-partner-from-civil-partnership",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/surviving-partner-from-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/surviving-partner-from-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 14
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#csvcubed-build-activity",
+            "@type": [
+                "http://www.w3.org/ns/prov#Activity",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/ns/prov#used": [
+                {
+                    "@id": "https://github.com/GSS-Cogs/csvcubed/releases/tag/v0.2.0"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/does-not-apply",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/does-not-apply"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/does-not-apply"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 3
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/never-married-and-never-registered-a-civil-partnership",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/never-married-and-never-registered-a-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/never-married-and-never-registered-a-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 4
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/surviving-partner-from-civil-partnership",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/surviving-partner"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Surviving partner from civil partnership"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#class/statistical-geography",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Class",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/in-a-registered-civil-partnership-opposite-sex",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-opposite-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-opposite-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 7
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/statistical-geography",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#dimension/statistical-geography"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#dimension/statistical-geography"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 2
+                },
+                {
+                    "@value": 1
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/formerly-in-a-civil-partnership-now-legally-dissolved",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/legally-dissolved"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Formerly in a civil partnership now legally dissolved"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/widowed",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/widowed"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Widowed"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-same-sex",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/married-same-sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Married: Same sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/in-a-registered-civil-partnership-same-sex",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-same-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-same-sex"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 8
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/separated-but-still-married",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-married"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-married"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 9
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-same-sex",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/civil-partnership-same-sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "In a registered civil partnership: Same sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/widowed",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/widowed"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/widowed"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 13
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#component/unit",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#attribute": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentRequired": [
+                {
+                    "@value": true
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 16
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/does-not-apply",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/does-not-apply"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Does not apply"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#dimension/statistical-geography",
+            "@type": [
+                "http://purl.org/linked-data/cube#CodedProperty",
+                "http://purl.org/linked-data/cube#DimensionProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#ComponentProperty"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Statistical Geography"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#class/statistical-geography"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/dimension#refArea"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-opposite-sex",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/married-opposite-sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Married: Opposite sex"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-married",
+            "@type": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://statistics.data.gov.uk/concepts/separated-married"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Separated, but still married"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#structure",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#DataStructureDefinition"
+            ],
+            "http://purl.org/linked-data/cube#component": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/in-a-registered-civil-partnership-same-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/divorced"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/unit"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/measure-type"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/separated-but-still-married"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/formerly-in-a-civil-partnership-now-legally-dissolved"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/widowed"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/statistical-geography"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/separated-but-still-in-a-registered-civil-partnership"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/married-opposite-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/in-a-registered-civil-partnership-opposite-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/surviving-partner-from-civil-partnership"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/married-same-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/does-not-apply"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#component/never-married-and-never-registered-a-civil-partnership"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-same-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-opposite-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#dimension/statistical-geography"
+                },
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                },
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/married-opposite-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/in-a-registered-civil-partnership-same-sex"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/does-not-apply"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/divorced"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/formerly-in-a-civil-partnership-now-legally-dissolved"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/widowed"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/surviving-partner-from-civil-partnership"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-in-a-registered-civil-partnership"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/separated-but-still-married"
+                },
+                {
+                    "@id": "marital-and-civil-partnership-status-by-category.csv#measure/never-married-and-never-registered-a-civil-partnership"
+                }
+            ]
+        },
+        {
+            "@id": "marital-and-civil-partnership-status-by-category.csv#unit/number",
+            "@type": [
+                "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://qudt.org/schema/qudt/Unit"
+            ],
+            "http://qudt.org/schema/qudt/isScalingOf": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.ontology-of-units-of-measure.org/resource/om-2/hasFactor": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#float",
+                    "@value": "1.0"
+                }
+            ],
+            "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "Number of occurences of Marital and civil partnership status by category (Integer)."
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Number"
+                }
+            ]
+        }
+    ]
+}
