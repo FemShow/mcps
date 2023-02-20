@@ -6,7 +6,7 @@
     "publisher": "https://www.gov.uk/government/organisations/office-for-national-statistics",
     "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
     "keywords": [
-        "married", 
+        "married",
         "partnership",
         "separated",
         "divorced",
@@ -15,77 +15,77 @@
     "columns": {
         "Lower Tier Local Authorities Code": {
             "from_template": "statistical-geography"
+        },
+        "Lower Tier Local Authorities": false,
+        "Marital and civil partnership status (12 categories) Code": {
+            "label": "Marital and civil partnership status",
+            "type": "dimension",
+            "code_list": {
+                "title": "Marital and civil partnership status",
+                "concepts": [
+                    {
+                        "label": "Does not apply",
+                        "notation": "-8"
+                    },
+                    {
+                        "label": "Never married and never registered a civil partnership",
+                        "notation": "1"
+                    },
+                    {
+                        "label": "Married: Opposite sex",
+                        "notation": "2"
+                    },
+                    {
+                        "label": "Married: Same sex",
+                        "notation": "3"
+                    },
+                    {
+                        "label": "In a registered civil partnership: Opposite sex",
+                        "notation": "4"
+                    },
+                    {
+                        "label": "In a registered civil partnership: Same sex",
+                        "notation": "5"
+                    },
+                    {
+                        "label": "Separated, but still married",
+                        "notation": "6"
+                    },
+                    {
+                        "label": "Separated, but still in a registered civil partnership",
+                        "notation": "7"
+                    },
+                    {
+                        "label": "Divorced",
+                        "notation": "8"
+                    },
+                    {
+                        "label": "Formerly in a civil partnership now legally dissolved",
+                        "notation": "9"
+                    },
+                    {
+                        "label": "Widowed",
+                        "notation": "10"
+                    },
+                    {
+                        "label": "Surviving partner from civil partnership",
+                        "notation": "11"
+                    }
+                ]
+            }
+        },
+        "Marital and civil partnership status (12 categories)": false,
+        "Observation": {
+            "type": "observations",
+            "measure": {
+                "label": "Count of people",
+                "from_existing": "https://purl.org/csv-cubed/resources/measures#people"
             },
-        "Lower Tier Local Authorities":{
-            "from_template": "statistical-geography"
-            },
-        "Marital and civil partnership status (12 categories) Code": false,
-        "Marital and civil partnership status (12 categories)":{
-        "type": "measures",
-        "values":
-    [
-        {
-            "label": "Does not apply",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/does-not-apply"
-        },
-        {
-            "label": "Never married and never registered a civil partnership",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/never-married"
-        },
-        {
-            "label": "Married: Opposite sex",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/married-opposite-sex"
-        },
-        {
-            "label": "Married: Same sex",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/married-same-sex"
-        },
-        {
-            "label": "In a registered civil partnership: Opposite sex",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/civil-partnership-opposite-sex"
-        },
-        {
-            "label": "In a registered civil partnership: Same sex",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/civil-partnership-same-sex"
-        },
-        {
-            "label": "Separated, but still married",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/separated-married"
-        },
-        {
-            "label": "Separated, but still in a registered civil partnership",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/separated-civil-partnership"
-        },
-        {
-            "label": "Divorced",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/divorced"
-        },
-        {
-            "label": "Formerly in a civil partnership now legally dissolved",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/legally-dissolved"
-        },
-        {
-            "label": "Widowed",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/widowed"
-        },
-        {
-            "label": "Surviving partner from civil partnership",
-            "definition_uri": "http://statistics.data.gov.uk/concepts/surviving-partner"
+            "data_type": "integer",
+            "unit": {
+                "label": "Number",
+                "from_existing": "http://qudt.org/vocab/unit/NUM"
+            }
         }
-    ]
-},
-"Observation":
-{
- "type": "observations",
- "data_type": "integer",
- "unit": {
-    "from_existing": "http://qudt.org/vocab/unit/NUM",
-    "label": "Number",
-    "description": "Number of occurences of Marital and civil partnership status by category (Integer)."
-}
-}
     }
 }
-
-
-
